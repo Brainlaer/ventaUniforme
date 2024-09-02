@@ -1,0 +1,9 @@
+.form-width{
+
+    max-width: 600px;
+}.form-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}

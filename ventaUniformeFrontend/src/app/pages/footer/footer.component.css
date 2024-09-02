@@ -1,0 +1,12 @@
+.footer{
+    margin: 100px 100px 20px 100px;
+}.footer-fila{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}.filas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

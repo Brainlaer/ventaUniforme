@@ -1,0 +1,52 @@
+<div class="m-5">
+  <div class="fila">
+    <div class="columna me-5">
+      <p>Buscar por:</p>
+      <div class="form-check" (click)="searchTodo()">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" [checked]="filtro=='todo'||filtro==null">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Todos los productos
+        </label>
+      </div>
+      <div class="form-check" (click)="searchByCamisa()">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" [checked]="filtro=='camisas'">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Camisas
+        </label>
+      </div>
+      <div class="form-check" (click)="searchByPantaloneta()">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" [checked]="filtro=='pantalonetas'">
+        <label class="form-check-label" for="flexRadioDefault3">
+          Pantalonetas
+        </label>
+      </div>
+      <div class="form-check" (click)="searchByzapatilla()">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" [checked]="filtro=='zapatillas'">
+        <label class="form-check-label" for="flexRadioDefault4">
+          Zapatos
+        </label>
+      </div>
+    </div>
+    <div class="columna-resultado">
+      <div class="card mt-0 m-4">
+        <div class="card-body">
+          Resultado de busqueda para: {{busqueda}}
+        </div>
+      </div>
+      <div class="wrap-results">
+        <a type="button" (click)="irVistaVestimenta(vestimenta.id)" *ngFor="let vestimenta of vestimentaList">
+          <div class="card" style="width: 18rem;">
+            <img src="{{vestimenta.imagen}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text" style="font-weight: bold;">{{vestimenta.titulo}}</p>
+              <p class="card-text">${{vestimenta.costo}} COP</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="alert alert-info" role="alert" *ngIf="!vestimentaList||vestimentaList.length==0">
+        Vestimentas no encontradas
+      </div>
+    </div>
+  </div>
+</div>

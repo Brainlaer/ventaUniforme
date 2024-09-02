@@ -1,0 +1,40 @@
+<div class="nav-bar">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand texto-bold" type="button" (click)="irInicio()">CLUB DEPORTIVO HAROLD LOZANO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="espacio-entre"></div>
+        <ul class="navbar-nav centrar-lista me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item">
+            <a class="nav-link" type="button" (click)="irSobreNosotros()">SOBRE NOSOTROS</a>
+          </li>
+        </ul>
+
+        
+      </div>
+    </div>
+    
+  </nav>
+  <div class="rigth-side">
+    <form class="d-flex me-4" style="max-width: 300px;" [formGroup]="busquedaForm" (submit)="buscar()">
+      <input class="form-control me-2" type="search" placeholder="Search" formControlName="busqueda" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <div class="dropdown">
+      <a role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <img class="navbar-icon perfil me-4" src="../../../assets/mi-cuenta.svg" alt="">
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" type="button" (click)="irPerfil()" *ngIf="isLoggin=='true'">Ver Perfil</a></li>
+        <li><a class="dropdown-item" type="button" (click)="cerrarSession()" *ngIf="isLoggin=='true'">Cerrar Sessión</a></li>
+        <li><a class="dropdown-item" type="button" (click)="irInicioSession()" *ngIf="isLoggin==''">Iniciar Sessión</a></li>
+        <li><a class="dropdown-item" type="button" (click)="irRegistro()" *ngIf="isLoggin==''">Crear Una Cuenta</a></li>
+      </ul>
+    </div>
+    <app-carrito></app-carrito>
+  </div>
+</div>

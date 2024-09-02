@@ -1,0 +1,36 @@
+<div>
+    <div class="imagen-bienvenida"></div>
+    <div class="fondo-negro">
+        <div class="fila">
+            <div class="contenido-bienvenida m-5">
+                <div>
+                    <h1 class="texto-bold">RESERVA TU UNIFORME</h1>
+                </div>
+                <div>
+                    <p class="texto-bold">De camisas a zapatillas, aquí encontraras tu uniforme completo para tus proximas
+                        practicas y partidos</p>
+                </div>
+                <div class="fila">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-warning" (click)="searchByCamisa()">CAMISAS</button>
+                        <button type="button" class="btn btn-outline-warning" (click)="searchByPantaloneta()">PANTALONETAS</button>
+                        <button type="button" class="btn btn-outline-warning" (click)="searchByzapatilla()">ZAPATILLAS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<h2 class="mt-5 mb-4">Agregados Recientemente</h2>
+<div class="wrap-results">
+    <a type="button" (click)="verVestimenta(vestimenta.id)" *ngFor="let vestimenta of vestimentaList">
+      <div class="card" style="width: 15rem;">
+        <img src="{{vestimenta.imagen}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text" style="font-weight: bold;">{{vestimenta.titulo}}</p>
+            <p class="card-text">${{vestimenta.costo}} COP</p>
+        </div>
+      </div>
+    </a>
+  </div>

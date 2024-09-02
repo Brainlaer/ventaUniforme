@@ -1,0 +1,29 @@
+<div class="cards">
+    <div class="cards-column">
+        <a  *ngFor="let reserva of reservas">
+            <div class="card text-center">
+                <div class="card-header">
+                    <p>{{reserva?.idPersona}}</p>
+                    <p>{{reserva?.correoPersona}}</p>
+                </div>
+                <div class="card-body wrap">
+                    <div class="card" *ngFor="let item of reserva?.reservaDtoPreviewItems" style="width: 8rem;">
+                        <img src={{item.imagen}} alt="">
+                        <div class="card-body">
+                            <div>
+                                <p class="label-item">Talla {{item.talla}} - {{item.unidades}} Unidad(es)</p>
+
+                              <p class="label-item">{{item.titulo}}</p>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    <p>Fecha reservado: {{reserva?.fechaReserva}} - Fecha a recoger: {{reserva?.fechaEntrega}}</p>
+                    <p *ngIf="reserva?.entregado==true">Recogido</p>
+                    <p *ngIf="reserva?.entregado==false">Sin Recoger</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

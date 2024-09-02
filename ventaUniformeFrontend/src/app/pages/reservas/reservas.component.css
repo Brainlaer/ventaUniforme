@@ -1,0 +1,23 @@
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}.cards-column{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    width: 100%;
+}.wrap{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}.wrap>img{
+    width: 100px;
+}a{
+    text-decoration: none;
+}.label-item{
+    font-size: 10px;
+}
