@@ -1,7 +1,0 @@
-.accordion-img{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}.accordion-img img{
-    width: 80%;
-}
